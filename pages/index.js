@@ -49,6 +49,15 @@ export default function Home() {
             >
               <h2>Matamask &rarr;</h2>
             </button>
+
+            <button
+              onClick={() => {
+                authenticate({ provider: "walletconnect" });
+              }}
+              className={styles.card}
+            >
+              <h2>OpenWallet &rarr;</h2>
+            </button>
           </div>
         </main>
       )}
