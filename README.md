@@ -22,10 +22,8 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 To connect the wallet, you need to connect the app to the moralis server. First, register on the moralis site and create a server. Then enter the server information in _app.js
 
 ```bash
-<MoralisProvider
-  appId="Enter your moralis server appID"
-  serverUrl="Enter your moralis server URL"
->
+appId="Enter your moralis server appID"
+serverUrl="Enter your moralis server URL"
 ```
 
 
