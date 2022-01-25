@@ -1,8 +1,11 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import Image from "next/image";
+import styles from "../styles/Home.module.css";
+import { useMoralis } from "react-moralis";
 
 export default function Home() {
+  const { authenticate, isAuthenticated, logout, account, user } = useMoralis();
+
   return (
     <div className={styles.container}>
       <Head>
@@ -11,22 +14,44 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to Web3
-        </h1>
+      {isAuthenticated ? (
+        <main className={styles.main}>
+          <h1 className={styles.title}>Welcome {user.get("username")}</h1>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
+          <p className={styles.description}>
+            Your Wallet Address : {" "}
+            <code className={styles.code}>{account}</code>
+          </p>
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Connect Wallet &rarr;</h2>
-          </a>
-        </div>
-      </main>
+          <div className={styles.grid}>
+            <button
+              onClick={logout}
+              className={styles.card}
+            >
+              <h2>Logout &rarr;</h2>
+            </button>
+          </div>
+        </main>
+      ) : (
+        <main className={styles.main}>
+          <h1 className={styles.title}>Say Hello 👋 to Web3</h1>
+
+          <p className={styles.description}>
+            Get started by connect your wallet
+          </p>
+
+          <div className={styles.grid}>
+            <button
+              onClick={() => {
+                authenticate({ provider: "metamask" });
+              }}
+              className={styles.card}
+            >
+              <h2>Matamask &rarr;</h2>
+            </button>
+          </div>
+        </main>
+      )}
 
       <footer className={styles.footer}>
         <a
@@ -34,12 +59,12 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
+          Powered by{" "}
           <span className={styles.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>
       </footer>
     </div>
-  )
+  );
 }
