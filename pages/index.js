@@ -28,7 +28,7 @@ export default function Home() {
               onClick={logout}
               className={styles.card}
             >
-              <h2>Logout &rarr;</h2>
+              <h2>Logout</h2>
             </button>
           </div>
         </main>
@@ -47,7 +47,7 @@ export default function Home() {
               }}
               className={styles.card}
             >
-              <h2>Matamask &rarr;</h2>
+              <h2>Matamask</h2>
             </button>
 
             <button
@@ -56,7 +56,7 @@ export default function Home() {
               }}
               className={styles.card}
             >
-              <h2>OpenWallet &rarr;</h2>
+              <h2>OpenWallet</h2>
             </button>
           </div>
         </main>
