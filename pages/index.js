@@ -23,7 +23,10 @@ export default function Home() {
             <code className={styles.code}>{account}</code>
           </p>
        <div className={styles.grid}>
-         <button onClick={swaptoken} className={styles.card}
+        
+         </div>
+       <div>
+          <button onClick={swaptoken} className={styles.card}
        <h2>Swap Token</h2>
        </button>
          <button onClick={staketokens} className={styles.card}
