@@ -34,7 +34,9 @@ export default function Home() {
         </main>
       ) : (
         <main className={styles.main}>
-          <h1 className={styles.title}>VRMC LOGIN MORALIS</h1>
+          <h1 className={styles.title}>VRMC
+             <Image src="/vercel.svg" alt="VRMC" width={72} height={16} />
+            </h1>
 
           <p className={styles.description}>
             Get started by connect your wallet
