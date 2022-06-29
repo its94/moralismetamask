@@ -75,7 +75,7 @@
 
 .card {
   margin: 1rem;
-  padding: 1.5rem;
+  padding: 20px 20px 10px 20px;
   text-align: left;
   color: inherit;
   text-decoration: none;
@@ -89,7 +89,7 @@
 .card:focus,
 .card:active {
   color: #0070f3;
-  border-color: #0070f3;
+  border-color: #ddd;
 }
 
 .card h2 {
