@@ -22,6 +22,14 @@ export default function Home() {
             Your Wallet Address : {" "}
             <code className={styles.code}>{account}</code>
           </p>
+       <div className={styles.grid}>
+         <button onClick={swaptoken} className={styles.card}
+       <h2>Swap Token</h2>
+       </button>
+         <button onClick={staketokens} className={styles.card}
+       <h2>Stake</h2>
+       </button>
+         </div>
 
           <div className={styles.grid}>
             <button
