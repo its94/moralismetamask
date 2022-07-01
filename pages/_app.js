@@ -10,15 +10,12 @@ function MyApp({ Component, pageProps }) {
     serverUrl="https://9paos9ehpmff.usemoralis.com:2053/server">
       <Component {...pageProps} />
     </MoralisProvider>
-  );
-}
-
-function MyApp({ Component, pageProps }) {
-  return (
-    <>
+ <>
       <AppNavbar />
       <Component {...pageProps} />
     </>
   );
 }
+
+
 export default MyApp;
