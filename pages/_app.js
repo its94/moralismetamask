@@ -1,5 +1,7 @@
 import "../styles/globals.css";
 import { MoralisProvider } from "react-moralis";
+import AppNavbar from "../components/AppNavbar";
+
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -11,4 +13,12 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
+function MyApp({ Component, pageProps }) {
+  return (
+    <>
+      <AppNavbar />
+      <Component {...pageProps} />
+    </>
+  );
+}
 export default MyApp;
